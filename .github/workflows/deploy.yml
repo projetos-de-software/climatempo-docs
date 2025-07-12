@@ -1,0 +1,74 @@
+name: Deploy - Dev
+
+on: 
+    workflow_dispatch:
+
+jobs:
+    build-artifact:
+        name: Construindo o artefato
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone do Repositório
+              uses: actions/checkout@v4
+
+            
+            - name: Instalar o node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+            - run: yarn install 
+            - run: yarn build
+
+            - name: Criar o Artefato para Deploy
+              env:
+                GITHUB_SHA: ${{ github.sha }}
+              run: tar -czf ${{ github.sha }}.tar.gz build/
+
+            - name: Armazenando o Artefato
+              uses: actions/upload-artifact@v4
+              with:
+                name: tempo-docs
+                path: ${{ github.sha }}.tar.gz
+    
+    prepare-release:
+        name: preparando os arquivos
+        runs-on: ubuntu-latest
+        needs: build-artifact
+        steps:
+            - name: Download do Artefato
+              uses: actions/download-artifact@v4
+              with:
+                name: tempo-docs
+
+            - name: Copiar artefato para o servidor
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USER }}
+                key: ${{ secrets.KEY }}
+                port: 22
+                source: ${{ github.sha }}.tar.gz
+                target: ~/tmp/files/  
+    
+    copy-to-location:
+        name: colocando os arquivos no lugar
+        runs-on: ubuntu-latest
+        needs: prepare-release
+        steps:
+            - name: Copiando os arquivos
+              uses: appleboy/ssh-action@master
+              with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USER }}
+                key: ${{ secrets.KEY }}
+                port: 22
+                script: |
+                    rm -rf ~/tempodocs/* 
+                    mv ~/tmp/files/${{ github.sha }}.tar.gz ~/tempodocs/docs.tar.gz
+                    cd ~/tempodocs
+                    tar xfv docs.tar.gz
+                    cd build
+                    mv * .. 
+                    cd .. 
+                    rm -rf build/
+                    
