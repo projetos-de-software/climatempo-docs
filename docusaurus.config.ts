@@ -32,7 +32,7 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'pt-Br',
+    defaultLocale: 'pt-BR',
     locales: ['pt-BR'],
   },
 
@@ -77,59 +77,50 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        }
+        
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentação',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Tutoriais',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Comunidade',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Site Mecatrônica Jovem',
+              href: 'https://www.mecatronicajovem.com.br',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/sHmBawH6dT',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Youtube',
+              href: 'https://www.youtube.com/@InstitutoNCBNewtonCBraga',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Repositórios',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/orgs/projetos-de-software/',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Projetos de Software.`,
     },
     prism: {
       theme: prismThemes.github,
