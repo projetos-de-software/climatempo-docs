@@ -1,0 +1,25 @@
+{
+    "cSpell.language": "en,pt,pt-BR",
+	"cSpell.enabledFileTypes": {
+        "markdown": true
+    },
+	"cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/{info,lfs,logs,refs,objects}/**",
+        ".git/{index,*refs,*HEAD}",
+        ".vscode",
+        ".vscode-insiders",
+        "**/**.sh",
+        "**/**.env",
+        "src/**",
+        "dist/**",
+        "scripts/**"
+    ],
+	"workbench.colorCustomizations": {
+		"editorInfo.foreground": "#ff0000"
+	},
+	"insertDateString.formatDate": "DD-MM-YYYY",
+	"markdown-preview-enhanced.plantumlServer": "https://kroki.io/plantuml/svg/"
+}
