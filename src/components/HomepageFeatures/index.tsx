@@ -21,16 +21,16 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Junte-se a Comunidade',
-    Svg: require('@site/static/img/comunidade.svg').default,
+    Svg: require('@site/static/img/iot.svg').default,
     description: (
       <>
-        Aqui você encontrará pessoas com os mesmos interesses que você.  
+        Você encontrará pessoas com os mesmos interesses que você.  
       </>
     ),
   },
   {
     title: 'Desperte o seu potencial',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/iot.svg').default,
     description: (
       <>
         O projeto é apenas o início. Você poderá ir além e compartilhar novos desafios.  

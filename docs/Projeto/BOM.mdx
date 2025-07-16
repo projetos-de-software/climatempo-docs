@@ -1,0 +1,52 @@
+---
+sidebar_position: 2
+---
+
+# Projetos e lista de materiais da versão 1.0
+
+## Projeto 
+
+É um fato de que apenas uma placa e o sensor DHT 11 são suficientes para fazer o protótipo funcionar. Mas e se não tiver internet? Como o desenvolvedor saberá? Imagine que você está desenvolvendo um produto para o usuário final. O produto não conecta na internet. E agora? Chamamos o batman? 
+
+O fato é que também é necessário interfaces de acknowledge para o usuário/desenvolvedor/entusiasta. A ideia é não aumentar muito o custo do produto final e oferecer ao usuário um padrão de resposta para que ele não fique desmotivado ou tenha problemas com o dispositivo. Por isso precisamos inserir algumas interfaces de validação. Numa primeira versão vou dar suporte a duas: 
+
+1. Buzzer - os erros de motherboard no passado, faz tempo que eu não preciso montar um computador, eram por apitos quando um problema ocorria. 
+2. Led's - é barato, luminoso e sem muita dor de cabeça. 
+3. Switches - vamos utilizar algumas chaves táctil para manipular alguns sinais. 
+4. Além disso o usuário tem o monitor serial do MicroPython. A única desvantagem é que o dispositivo precisa ficar conectado ao PC para que se veja a saída. 
+
+Problemas que podemos prever de antemão: 
+
+- Falta de conectividade com a internet
+- Falta de conectividade com o site. A internet neste caso está OK. 
+- Erro de informação do sensor DHT11. O sensor informa 110º, por exemplo. Isso está fora de uma range aceitável para medir temperatura ambiente. 
+
+O modo de teste pode ser assim: 
+
+- O usuário pressiona o botão de teste até que o led comece a piscar. A partir daí a placa executa um teste padrão. 
+- Caso pisque uma vez por segundo e toque um bip por segundo no buzzer está sem internet.
+- Caso pisque uma vez por segundo e toque dois bips por segundo no buzzer o dispositivo acessa internet, mas não acessa o site. 
+- Caso pisque uma vez por segundo e toque três bips por segundo o sensor está emitindo informações erradas. 
+
+- O usuário pode apertar o botão de send para enviar um sinal para a api. É como um ping. O retorno é um pong. Além disso o usuário, logado no site, vê que a placa enviou um sinal de monitoramento. 
+
+## Bill of Material 
+
+Para a versão 1.0 da placa a lista será a seguinte: 
+
+
+|  Qtd  |                                     Item                                     |
+| :---: | :--------------------------------------------------------------------------: |
+|  01   | Placa com Suporte a MicroPython (o meu primeiro exemplo será uma Pi Pico 2W) |
+|  01   |                         DHT11 Sensor de Temperatura                          |
+|  02   |                         Led - (1)Vermelho,(1) Verde                          |
+|  02   |                            Resistores de 220 Ohms                            |
+|  01   |                             Buzzer Passivo - 5V                              |
+|  02   |                    Chaves Tácteis - Push Button Switches                     |
+
+
+
+:::tip
+    A Pi Pico possui uma biblioteca musical que pode ser acessada pelo [link](https://projects.raspberrypi.org/en/projects/introduction-to-the-pico/9). Agora podemos fazer uma melodia de terror para quando o teste não acessa a internet! 
+:::
+
