@@ -4,18 +4,39 @@ sidebar_position: 1
 
 # UC001 - Efetuar Sign UP
 
+Este caso de uso refere-se ao visitante que quer se cadastrar no site para poder utilizar o sistema. 
+
 ## Ator
+
+visitante/usuário
 
 ## Pré-Condições
 
+Não há. 
+
 ## Fluxo Principal
+
+|                           Ator                           |                                    Sistema                                     |
+| :------------------------------------------------------: | :----------------------------------------------------------------------------: |
+| 1. O usuário clica no botão de efetuar cadastro(sign up) |                                                                                |
+|                                                          |         2. O sistema envia o usuário para o provedor de Oauth2(google)         |
+| 3. O usuário confirma que ele quer se cadastrar no site  |                                                                                |
+|                                                          | 4. O sistema emite uma mensagem de que o pedido foi efetuado e está em análise |
 
 ## Fluxo Alternativo
 
+1. O usuário tenta fazer um cadastro já tendo submetido um. 
+
+| Ator  |                                       Sistema                                       |
+| :---: | :---------------------------------------------------------------------------------: |
+|       | O sistema retorna ao usuário que já existe um pedido de cadastro aguardando análise |
+
 ## Pós-Condições 
+
+É enviado um email para o usuário dizendo que o pedido dele está em análise. 
 
 ---
 
-| Número | Descrição | Data  |         Autor         |
-| :----: | :-------: | :---: | :-------------------: |
-|  1.0   |           |       | Marcos de Lima Carlos |
+| Número |   Descrição    |    Data    |         Autor         |
+| :----: | :------------: | :--------: | :-------------------: |
+|  1.0   | Versão Inicial | 17-07-2025 | Marcos de Lima Carlos |

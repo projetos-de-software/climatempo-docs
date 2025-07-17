@@ -4,18 +4,42 @@ sidebar_position: 2
 
 # UC002 - Efetuar Login
 
+Esse pedido refere-se ao login efetuado pelo usuário no site. 
+
 ## Ator
+
+usuário
 
 ## Pré-Condições
 
+Ter um cadastro no site e que esse cadastro esteja liberado para uso. 
+
 ## Fluxo Principal
+
+|                         Ator                         |                                      Sistema                                       |
+| :--------------------------------------------------: | :--------------------------------------------------------------------------------: |
+|          O usuário clica no botão de login           |                                                                                    |
+|                                                      |           O sistema pede para que o usuário utilize a autenticação Oauth           |
+| O usuário clica e libera os perfis para autenticação |                                                                                    |
+|                                                      | O sistema efetua a autenticação e direciona o usuário para o perfil que ele possui |
 
 ## Fluxo Alternativo
 
+1. O usuário não está cadastrado
+
+| Ator  |               Sistema                |
+| :---: | :----------------------------------: |
+|       | O sistema emite uma mensagem de erro |
+
+
 ## Pós-Condições 
+
+registro de log de entrada. 
 
 ---
 
-| Número | Descrição | Data  |         Autor         |
-| :----: | :-------: | :---: | :-------------------: |
-|  1.0   |           |       | Marcos de Lima Carlos |
+| Número |   Descrição    |    Data    |         Autor         |
+| :----: | :------------: | :--------: | :-------------------: |
+|  1.0   | Versão Inicial | 17-07-2025 | Marcos de Lima Carlos |
+
+

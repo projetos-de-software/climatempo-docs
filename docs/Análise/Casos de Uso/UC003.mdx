@@ -2,20 +2,43 @@
 sidebar_position: 3
 ---
 
-# UC003 - Cadastrar Device
+# UC003 - Cadastrar/Manter Dispositivo
+
+Este caso de uso refere-se ao cadastro de dispositivos com MicroPython no sistema. 
 
 ## Ator
 
+Usuário
+
 ## Pré-Condições
+
+Estar cadastrado no sistema, liberado.
 
 ## Fluxo Principal
 
+|                               Ator                               |                                 Sistema                                  |
+| :--------------------------------------------------------------: | :----------------------------------------------------------------------: |
+| O usuário informa ao sistema que deseja cadastrar um dispositivo |                                                                          |
+|                                                                  |                O sistema solicita os dados do dispositivo                |
+|             O usuário envia os dados do dispositivo              |                                                                          |
+|                                                                  | O sistema valida os dados do dispositivo e emite uma mensagem de sucesso |
+
 ## Fluxo Alternativo
+
+No passo 4. Os dados do dispositivo são inválidos
+
+1. O sistema emitirá uma mensagem de erro e fará a solicitação destes dados novamente. 
+
+O usuário já possui o limite máximo de dispositivos ativos cadastrados. 
+
+1. O sistema emitirá uma mensagem de erro informando ao usuário que o número máximo de dispositivos atingiu o limite. 
 
 ## Pós-Condições 
 
+É enviado um email ao usuário que um dispositivo foi cadastrado. 
+
 ---
 
-| Número | Descrição | Data  |         Autor         |
-| :----: | :-------: | :---: | :-------------------: |
-|  1.0   |           |       | Marcos de Lima Carlos |
+| Número |   Descrição    |    Data    |         Autor         |
+| :----: | :------------: | :--------: | :-------------------: |
+|  1.0   | Versão Inicial | 17-07-2025 | Marcos de Lima Carlos |
