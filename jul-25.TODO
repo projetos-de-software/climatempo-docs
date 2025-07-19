@@ -1,0 +1,16 @@
+climatempo: 
+    docs:
+        ☐ 
+    placa: 
+        ☐ TODO: montagem e disposição dos componentes @high
+            ☐ TODO: teste do buzzer @high
+            ☐ TODO: teste dos leds externos @high
+            ☐ TODO: teste das chaves @high
+            ☐ TODO: teste do sensor DHT11 @critical
+    software servidor:
+        ☐ TODO: mockup da tela inicial @critical
+            ☐ TODO: navbar com definições @high
+            ☐ TODO: gadgets @critical
+            ☐ TODO: fluxo de páginas @high
+        ☐ TODO: instalação do ORM @critical
+        ☐ TODO: instalação do next-auth @critical
