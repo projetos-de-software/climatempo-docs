@@ -1,9 +1,7 @@
 climatempo: 
-    docs:
-        ☐ 
     placa: 
         ☐ TODO: montagem e disposição dos componentes @high
-            ☐ TODO: teste do buzzer @high
+            ✔ TODO: teste do buzzer @high @done(25-07-26 06:12)
             ☐ TODO: teste dos leds externos @high
             ☐ TODO: teste das chaves @high
             ☐ TODO: teste do sensor DHT11 @critical
